@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Theme</title>
+</head>
+<body>
+<!--    <form action="">
+        <input type="color" name="selectedColor" id="themeSelector" />
+
+        <input type="submit" value="click" />
+    </form>-->
+
+        <input type="color" 
+                id="themeSelector" 
+                onchange="changeTheme()"/>
+
+        <script>
+            function changeTheme(){
+                console.log("change")
+                var body = document.querySelector('body');
+                var selector = document.getElementById('themeSelector');
+                body.style.background = selector.value
+            }
+        </script>
+</body>
+</html>

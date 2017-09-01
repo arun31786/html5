@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Form Elements</title>
+</head>
+<body>
+    <section>
+    <h1>Complete your registration form</h1>
+    <div id="myForm">
+        <form action ="#">
+            <table>
+                <tr>
+                    <td>Username:</td>
+                    <td class ="data">
+                        <input type="text" 
+                            id="username"
+                            placeholder="Enter your name" 
+                            autocomplete="on" 
+                            required="required" />
+                        </td>
+                </tr>
+                <tr>
+                    <td><input type="reset"></td>
+                    <td><input type="submit"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</section>
+
+<script>
+    var usernameElement = document.getElementById('username');
+    usernameElement.addEventListener('change', validate);
+
+    function validate(event){
+        console.log(event.srcElement)
+        if(event.srcElement.value === ""){
+            event.srcElement.setCustomValidity("Username is blank");
+        } else {
+            event.srcElement.setCustomValidity("");
+        }
+    }
+
+</script>
+</body>
+</html>
