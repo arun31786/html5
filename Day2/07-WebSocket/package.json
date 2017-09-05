@@ -1,0 +1,16 @@
+{
+  "name": "html-chatroom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "PuneetVashisht",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.1",
+    "mongodb": "^2.2.24",
+    "socket.io": "^1.0.6"
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Geo Demo</title>
+</head>
+<body>
+  <p id="geoDemo">Get your location: </p>
+  <button onclick="getLocation()">here</button>
+
+
+<script>
+  var g = document.getElementById("geoDemo");
+  
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showError);
+    }
+    else { g.innerHTML = "Browser is not supporting Geolocation."; }
+  }
+
+
+
+
+  function showPosition(position) {
+    g.innerHTML = "Latitude: " + position.coords.latitude + "<br>" +
+      "Longitude: " + position.coords.longitude;
+  }
+
+  
+  function showError(error) {
+    switch (error.code) {
+      case error.PERMISSION_DENIED:
+        g.innerHTML = "User denied for Geolocation."
+        break;
+      case error.POSITION_UNAVAILABLE:
+        g.innerHTML = "Information is not available."
+        break;
+      case error.TIMEOUT:
+        g.innerHTML = "Timed out."
+        break;
+      case error.UNKNOWN_ERROR:
+        g.innerHTML = "Unknown Error."
+        break;
+    }
+  }
+</script>
+
+<div id="show"></div>
+<!--
+<script>
+	if(typeof(Storage)!=="undefined") {
+		localStorage.name="TKHTS";
+	document.getElementById("show").innerHTML=
+				"Name: " + localStorage.name;
+	}
+	else {
+		document.getElementById("show").innerHTML=
+				"Sorry, no support for web storage";
+	}
+</script>
+
+-->
+
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{
+	"name": "sse-demo",
+	"version": "1.0.0",
+	"description": "Server-Sent Events (SSEs), Node.js (Express.js)",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.14.0"
+	}
+}

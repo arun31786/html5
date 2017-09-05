@@ -1,0 +1,65 @@
+H1 {
+	text-align: center;
+	font-size: 150%;
+	margin-bottom: 10px;
+}
+
+H2 {
+	text-align: center;
+	font-size: 125%;
+	margin-bottom: 10px;
+}
+
+DIV#tickets {
+	margin: 30px auto;
+	background: gainsboro;
+	padding: 5px;
+}
+
+DIV.ticket {
+	margin: 5px auto;
+	border: 2px solid cornflowerblue;
+	padding: 3px;
+	border-radius: 10px;
+	width: 160px;
+	font-size: 115%;
+}
+
+DIV.name {
+	display: inline-block;
+	width: 80px;
+	padding: 3px;
+}
+
+DIV.price {
+	display: inline-block;
+	width: 60px;
+	padding: 3px;
+	text-align: right;
+	transition: all 0.2s ease-out;
+}
+
+DIV#log {
+	margin: 10px auto;
+	width: 400px;
+	height: 150px;
+	background: gainsboro;
+	padding: 5px;
+	overflow-y: scroll;
+}
+
+DIV#notSupported {
+	display: none;
+	margin: 10px auto;
+	text-align: center;
+	color: red;
+	font-size: 150%;
+}
+
+P.hint {
+	width: 600px;
+	margin: 10px auto;
+	text-align: justify;
+	text-indent: 20px;
+	line-height: 135%;
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Server Sent Events Example - Stock Tickets</title>
+	<link rel="stylesheet" href="lib/css/main.css"/>
+</head>
+
+<body>
+
+	<h1>Server Sent Events Example</h1>
+
+	<div id="notSupported">
+		Your browser does not support Server Sent Events.
+	</div>
+
+	<p class="hint">
+		This is simple Server Sent Events (SSE) example that updates stock prices when market moves.
+		Data source is predefined array with prices. There is delay of 2 seconds
+		between each event.
+	</p>
+
+	<h2>Tickets</h2>
+
+	<div id="tickets">
+		<div class="ticket"><div class="name">IBM</div><div class="price" id="t_IBM">161.57</div></div>
+		<div class="ticket"><div class="name">AAPL</div><div class="price" id="t_AAPL">114.45</div></div>
+		<div class="ticket"><div class="name">GOOG</div><div class="price" id="t_GOOG">532.94</div></div>
+		<div class="ticket"><div class="name">MSFT</div><div class="price" id="t_MSFT">47.12</div></div>
+	</div>
+
+
+	<h2>Simple Log Console</h2>
+	<p class="hint">
+		This is simple log console. It is useful for testing purposes and to understand better how SSE works.
+		Event id and data are logged for each event.
+	</p>
+	<div id="log">
+	</div>
+
+
+	<script src="lib/js/main.js"></script>
+	</body>
+</html>
+

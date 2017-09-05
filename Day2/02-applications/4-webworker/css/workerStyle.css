@@ -1,0 +1,46 @@
+header {
+    height: 110px;
+    padding: 5px;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+section {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header, section{
+    border: 2px solid red;
+    border-radius: 15px;
+}
+
+#empCounter {
+    float: right;
+    width: 150px;
+    font-size: 18px;
+    font-family: "Century", Gadget, sans-serif;
+    font-style: italic;
+    margin-right: 50px;
+}
+
+#empList, #registrationForm {
+    width: 47%;
+    margin: 10px;
+    float: left;
+}
+
+#last{
+    clear: both;
+}
+
+table {
+    width: 100%;
+}
+#workerStarter{
+    float: left;
+}
+#workerStopper{
+    float: right;
+}

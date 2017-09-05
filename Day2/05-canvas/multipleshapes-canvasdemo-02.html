@@ -1,0 +1,67 @@
+
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Draw Multiple Shapes in Canvas  - Powered by website.com</title>
+</head>
+<body>
+<canvas id="myCanvas" width="350" height="550" style="border:3px solid darkseagreen;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script type="text/javascript">
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.fillStyle="green";
+ctx.fillRect(20,20,70,60);  // Solid Rectangle
+ctx.strokeRect(110,20,70,60);  // Border Line
+
+/*// Creating Triangle
+ctx.beginPath();
+ctx.fillStyle="black";
+ctx.moveTo(50,50);
+ctx.lineTo(70,250);
+ctx.lineTo(300,500);
+ctx.closePath();
+//ctx.stroke();*/
+
+
+ctx.beginPath();
+ctx.arc(50,150,40,0,(Math.PI/2)*(-1));
+
+ctx.stroke();
+ctx.closePath();
+
+ctx.fillStyle="darkseagreen";
+ctx.beginPath();
+ctx.arc(140,150,20,0,2*Math.PI);
+ctx.fill();
+ctx.closePath();
+
+ctx.font="20px Century";
+ctx.strokeText("USTGlobal - TKHTS",20,210); // x- 20 , y - 210
+
+ctx.fillStyle="darkgreen";
+ctx.font="20px Century";
+ctx.fillText("USTGlobal",20,260);
+
+//Create gradient
+var grd=ctx.createLinearGradient(0,0,200,0);
+grd.addColorStop(0,"red");
+grd.addColorStop(1/5,"aliceblue");
+grd.addColorStop(2/5,"green");
+// one can add any colorStop between 0 and 1
+grd.addColorStop(3/5,"purple");
+grd.addColorStop(4/5,"yellow");
+grd.addColorStop(1,"black");
+
+// Fill with gradient
+ctx.fillStyle=grd;
+ctx.fillRect(20,350,260,100);
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drag And Drop- Powered by website.com</title>
+    <style type="text/css">
+        #page{
+            height:1000px;
+        }
+
+        .imageContainer
+        {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            float: left;
+            margin: 15px;
+            border: 1px solid black;
+        }
+
+
+        .imageContainer img {
+            width: 100%;
+            height: 100%;
+        }
+
+        td > div{
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+        <table>
+            <tr>
+                <td>
+                    <div class="imageContainer">
+                        <img id="image_1" src="../../../images/image_1.jpg" draggable="true"
+                             ondragstart="drag(event)">
+                    </div>
+                </td>
+                <td>
+                    <div class="imageContainer">
+                        <img id="image_2" src="../../../images/image_2.jpg" draggable="true"
+                             ondragstart="drag(event)">
+                    </div>
+                </td>
+                <td>
+                    <div class="imageContainer">
+                        <img id="image_3" src="../../../images/image_3.jpg" draggable="true"
+                             ondragstart="drag(event)">
+                    </div>
+                </td>
+                <td>
+                    <div class="imageContainer">
+                        <img id="image_4" src="../../../images/image_4.jpg" draggable="true"
+                             ondragstart="drag(event)">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <lable>Singer</lable>
+                </th>
+                <th>
+                    <lable>Hunger</lable>
+                </th>
+                <th>
+                    <lable>True emotions</lable>
+                </th>
+                <th>
+                    <lable>Fight to be alive</lable>
+                </th>
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="imageContainer"
+                         id="imageDiv_1" ondrop="drop(event)" ondragover="allowDrop(event)"
+                         ondragend="dragend(event)"></div>
+                </td>
+
+                <td>
+                    <div class="imageContainer" id="imageDiv_2" ondrop="drop(event)" ondragover="allowDrop(event)"
+                         ondragend="dragend(event)"></div>
+                </td>
+                <td>
+                    <div class="imageContainer" id="imageDiv_3" ondrop="drop(event)" ondragover="allowDrop(event)"
+                         ondragend="dragend(event)"></div>
+                </td>
+                <td>
+                    <div class="imageContainer" id="imageDiv_4" ondrop="drop(event)" ondragover="allowDrop(event)"
+                         ondragend="dragend(event)"></div>
+                </td>
+            </tr>
+        </table>
+
+
+    <script type="text/javascript">
+        function dragend(ev) {
+            ev.preventDefault();
+        }
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("imageKey", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();  // Tell to Browser to do no event
+            ev.target.ondrop = null;
+            var data = ev.dataTransfer.getData("imageKey");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+
+</body>
+</html>

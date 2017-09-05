@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>WebWorker Demo - tkhts</title>
+    <link href="css/workerStyle.css" rel="stylesheet"/>
+    <script src="js/T02_webWorkerScript.js"></script>
+</head>
+<body>
+<header>
+    <img src="../../image/tkhts.png"/>
+    <div id="empCounter"></div>
+</header>
+<section>
+    <div id="empList">
+        <div id="controller">
+            <div id="workerStarter"><button onclick="startWorker()">Start Worker</button></div>
+            <div id="workerStopper"><button onclick="workerStopper()">Stop Worker</button></div>
+        </div>
+        <table id="empTable" border="1" cellpadding="6">
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Salary</th>
+            </tr>
+        </table>
+    </div>
+
+    <div id="registrationForm">
+        <div id="newEmp"></div>
+        <div>
+        <form onsubmit="registeredEmp(event)" method="post">
+            <table id="regTable" border="1" cellpadding="10">
+                <tr>
+                    <th colspan="2"><h2>Registration Form</h2></th>
+                </tr>
+                <tr>
+                    <td>User Name:</td>
+                    <td><input type="text" placeholder="Enter your name" required="required"/></td>
+                </tr>
+                <tr>
+                    <td>Position:</td>
+                    <td><input type="text" placeholder="Enter your position" required="required"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Office:</td>
+                    <td><input type="text" placeholder="Enter your office name" required="required"/></td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td><input type="number" name="age" min="18" max="60" required="required"/></td>
+                </tr>
+                <tr>
+                    <td>Salary:</td>
+                    <td><input type="text" placeholder="Enter your salary" required="required"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Register" />
+                        <input type="reset" value="Clear"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        </div>
+    </div>
+    <div id="last"></div>
+</section>
+
+<script>
+    function registeredEmp(event) {
+        var name = document.getElementsByTagName('input')[0].value;
+        var position = document.getElementsByTagName('input')[1].value;
+        var office = document.getElementsByTagName('input')[2].value;
+        var age = document.getElementsByTagName('input')[3].value;
+        var salary = document.getElementsByTagName('input')[4].value;
+
+        var newEmp = document.getElementById('newEmp');
+        newEmp.innerHTML = name + " has successfully been registered.";
+        var empList = "<ul><li>" + name + "</li><li>" + position + "</li><li>" + office + "</li><li>" + age + "</li><li>" + salary + "</li></ul>"
+        newEmp.innerHTML += empList;
+
+        // prevent form submission
+        event.preventDefault();
+    }
+
+</script>
+</body>
+</html>
